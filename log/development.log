@@ -1,0 +1,480 @@
+  [1m[36m (86.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (79.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateArticles (20140528151158)
+  [1m[35m (25.0ms)[0m  CREATE TABLE `articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `text` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140528151158')
+  [1m[36m (21.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateComments (20140528171153)
+  [1m[35m (39.0ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `commenter` varchar(255), `body` text, `article_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (95.0ms)[0m  [1mCREATE INDEX `index_comments_on_article_id` ON `comments` (`article_id`) [0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140528171153')[0m
+  [1m[35m (15.0ms)[0m  COMMIT
+Migrating to CreateCharts (20140529020123)
+  [1m[36m (56.0ms)[0m  [1mCREATE TABLE `charts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `risk_score` int(11), `asset_class` varchar(255), `investment_fund` varchar(255), `weight` int(11), `ticker` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140529020123')[0m
+  [1m[35m (17.0ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/" for ::1 at 2014-07-08 19:23:01 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 2176ms (Views: 2136.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/comments.css?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/articles.css?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/comments.js?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/articles.js?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-07-08 19:23:03 +0400
+
+
+Started GET "/articles" for ::1 at 2014-07-08 19:23:05 +0400
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (1.0ms)[0m  SELECT `articles`.* FROM `articles`
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 8.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2014-07-08 19:23:07 +0400
+Processing by ArticlesController#new as HTML
+Filter chain halted as #<Proc:0x4464b40@c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_controller/metal/http_authentication.rb:71> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2014-07-08 19:23:19 +0400
+Processing by ArticlesController#new as HTML
+Filter chain halted as #<Proc:0x4464b40@c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_controller/metal/http_authentication.rb:71> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2014-07-08 19:24:48 +0400
+Processing by ArticlesController#new as HTML
+Filter chain halted as #<Proc:0x4464b40@c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_controller/metal/http_authentication.rb:71> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2014-07-08 19:24:51 +0400
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (134.0ms)
+  Rendered articles/new.html.erb within layouts/application (148.0ms)
+Completed 200 OK in 159ms (Views: 155.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/articles.css?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/comments.css?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/articles.js?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/comments.js?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-07-08 19:24:52 +0400
+
+
+Started POST "/articles" for ::1 at 2014-07-08 19:24:57 +0400
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ngmb5JdDBh3X0B8T3uq4fnD56bpL2AYs1ae0OkP8S/E=", "article"=>{"title"=>"1", "text"=>"ddsff"}, "commit"=>"Create Article"}
+Filter chain halted as #<Proc:0x4464b40@c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_controller/metal/http_authentication.rb:71> rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2014-07-08 19:24:58 +0400
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ngmb5JdDBh3X0B8T3uq4fnD56bpL2AYs1ae0OkP8S/E=", "article"=>{"title"=>"1", "text"=>"ddsff"}, "commit"=>"Create Article"}
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  Rendered articles/_form.html.erb (4.0ms)
+  Rendered articles/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 23ms (Views: 16.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/articles.css?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/comments.css?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/articles.js?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/comments.js?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-07-08 19:24:58 +0400
+
+
+Started POST "/articles" for ::1 at 2014-07-08 19:25:04 +0400
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ngmb5JdDBh3X0B8T3uq4fnD56bpL2AYs1ae0OkP8S/E=", "article"=>{"title"=>"12345", "text"=>"ddsff"}, "commit"=>"Create Article"}
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (19.0ms)[0m  INSERT INTO `articles` (`created_at`, `text`, `title`, `updated_at`) VALUES ('2014-07-08 15:25:04', 'ddsff', '12345', '2014-07-08 15:25:04')
+  [1m[36m (18.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 120ms (ActiveRecord: 37.0ms)
+
+
+Started GET "/articles/1" for ::1 at 2014-07-08 19:25:04 +0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (7.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (7.0ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`article_id` = 1[0m
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (28.0ms)
+  Rendered articles/show.html.erb within layouts/application (172.0ms)
+Completed 200 OK in 196ms (Views: 169.0ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/comments.css?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/articles.css?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/articles.js?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/comments.js?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-07-08 19:25:04 +0400
+
+
+Started POST "/articles/1/comments" for ::1 at 2014-07-08 19:25:09 +0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ngmb5JdDBh3X0B8T3uq4fnD56bpL2AYs1ae0OkP8S/E=", "comment"=>{"commenter"=>"", "body"=>""}, "commit"=>"Create Comment", "article_id"=>"1"}
+  [1m[35mArticle Load (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `comments` (`article_id`, `body`, `commenter`, `created_at`, `updated_at`) VALUES (1, '', '', '2014-07-08 15:25:09', '2014-07-08 15:25:09')
+  [1m[36m (58.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 67ms (ActiveRecord: 58.0ms)
+
+
+Started GET "/articles/1" for ::1 at 2014-07-08 19:25:09 +0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`article_id` = 1[0m
+  [1m[35mArticle Load (1.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 ORDER BY `articles`.`id` ASC LIMIT 1
+  Rendered comments/_comment.html.erb (22.0ms)
+  Rendered comments/_form.html.erb (4.0ms)
+  Rendered articles/show.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 46ms (Views: 41.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/comments.css?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/articles.css?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/articles.js?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/comments.js?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-07-08 19:25:09 +0400
+
+
+Started GET "/articles/1/edit" for ::1 at 2014-07-08 19:25:13 +0400
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.0ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 1 LIMIT 1[0m
+  Rendered articles/_form.html.erb (3.0ms)
+  Rendered articles/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2014-07-08 19:25:15 +0400
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.0ms)[0m  SELECT `articles`.* FROM `articles`
+  Rendered articles/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2014-07-08 19:25:21 +0400
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (19.0ms)
+  Rendered articles/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2014-07-08 19:25:30 +0400
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ngmb5JdDBh3X0B8T3uq4fnD56bpL2AYs1ae0OkP8S/E=", "article"=>{"title"=>"2345667", "text"=>"terrdifdlfa dfdsafad"}, "commit"=>"Create Article"}
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `articles` (`created_at`, `text`, `title`, `updated_at`) VALUES ('2014-07-08 15:25:30', 'terrdifdlfa dfdsafad', '2345667', '2014-07-08 15:25:30')
+  [1m[36m (22.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 27ms (ActiveRecord: 23.0ms)
+
+
+Started GET "/articles/2" for ::1 at 2014-07-08 19:25:30 +0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.0ms)[0m  SELECT `articles`.* FROM `articles` WHERE `articles`.`id` = 2 LIMIT 1
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`article_id` = 2[0m
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (3.0ms)
+  Rendered articles/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/articles.css?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/comments.css?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/articles.js?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/comments.js?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-07-08 19:25:30 +0400
+
+
+Started GET "/articles" for ::1 at 2014-07-08 19:25:32 +0400
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.0ms)[0m  SELECT `articles`.* FROM `articles`
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2014-07-08 20:23:46 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 113ms (Views: 87.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/articles.css?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/comments.css?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/articles.js?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/comments.js?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-07-08 20:23:47 +0400
+
+
+Started GET "/articles" for ::1 at 2014-07-08 20:28:26 +0400
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (1.0ms)[0m  SELECT `articles`.* FROM `articles`
+  Rendered articles/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 45ms (Views: 35.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/articles" for ::1 at 2014-07-08 20:32:02 +0400
+
+LoadError (cannot load such file -- writeexcel):
+  app/controllers/articles_controller.rb:1:in `<top (required)>'
+
+
+  Rendered c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (47.0ms)
+
+
+Started GET "/articles" for ::1 at 2014-07-08 20:32:02 +0400
+
+LoadError (cannot load such file -- writeexcel):
+  app/controllers/articles_controller.rb:1:in `<top (required)>'
+
+
+  Rendered c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-20 17:34:57 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (71.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 331ms (Views: 290.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/articles.css?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/articles.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 17:34:59 +0400

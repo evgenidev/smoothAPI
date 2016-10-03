@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  risk_score: 1
+  asset_class: MyString
+  investment_fund: MyString
+  weight: 1
+  ticker: MyString
+
+two:
+  risk_score: 1
+  asset_class: MyString
+  investment_fund: MyString
+  weight: 1
+  ticker: MyString

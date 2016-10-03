@@ -1,0 +1,50 @@
+  [1m[36m (55.0ms)[0m  [1mDROP DATABASE IF EXISTS `blog_test`[0m
+  [1m[35m (6.0ms)[0m  CREATE DATABASE `blog_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (55.0ms)[0m  [1mCREATE TABLE `articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `text` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (23.0ms)[0m  CREATE TABLE `charts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `risk_score` int(11), `asset_class` varchar(255), `investment_fund` varchar(255), `weight` int(11), `ticker` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (39.0ms)[0m  [1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `commenter` varchar(255), `body` text, `article_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (44.0ms)[0m  CREATE INDEX `index_comments_on_article_id` USING btree ON `comments` (`article_id`) 
+  [1m[36m (28.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (70.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36m (1.0ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (10.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140529020123')
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140528151158')[0m
+  [1m[35m (11.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140528171153')
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (86.0ms)[0m  [1mDROP DATABASE IF EXISTS `blog_test`[0m
+  [1m[35m (1.0ms)[0m  CREATE DATABASE `blog_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (39.0ms)[0m  [1mCREATE TABLE `articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `text` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (22.0ms)[0m  CREATE TABLE `charts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `risk_score` int(11), `asset_class` varchar(255), `investment_fund` varchar(255), `weight` int(11), `ticker` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (48.0ms)[0m  [1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `commenter` varchar(255), `body` text, `article_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (46.0ms)[0m  CREATE INDEX `index_comments_on_article_id` USING btree ON `comments` (`article_id`) 
+  [1m[36m (26.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (47.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (10.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140529020123')
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140528151158')[0m
+  [1m[35m (12.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140528171153')
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (13.0ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (7.0ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (7.0ms)[0m  DELETE FROM `articles`
+  [1m[36mFixture Insert (17.0ms)[0m  [1mINSERT INTO `articles` (`title`, `text`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyText', '2014-07-21 00:46:29', '2014-07-21 00:46:29', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO `articles` (`title`, `text`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyText', '2014-07-21 00:46:29', '2014-07-21 00:46:29', 298486374)
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM `charts`[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO `charts` (`risk_score`, `asset_class`, `investment_fund`, `weight`, `ticker`, `created_at`, `updated_at`, `id`) VALUES (1, 'MyString', 'MyString', 1, 'MyString', '2014-07-21 00:46:29', '2014-07-21 00:46:29', 980190962)
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO `charts` (`risk_score`, `asset_class`, `investment_fund`, `weight`, `ticker`, `created_at`, `updated_at`, `id`) VALUES (1, 'MyString', 'MyString', 1, 'MyString', '2014-07-21 00:46:29', '2014-07-21 00:46:29', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM `comments`
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO `comments` (`commenter`, `body`, `article_id`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyText', NULL, '2014-07-21 00:46:29', '2014-07-21 00:46:29', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO `comments` (`commenter`, `body`, `article_id`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyText', NULL, '2014-07-21 00:46:29', '2014-07-21 00:46:29', 298486374)
+  [1m[36m (24.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 2444ms (Views: 2442.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  ROLLBACK
